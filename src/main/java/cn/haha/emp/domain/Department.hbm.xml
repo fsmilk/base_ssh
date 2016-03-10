@@ -1,15 +1,20 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2016-3-6 18:01:50 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2016-3-10 16:28:51 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="cn.haha.emp.domain.Department" table="DEPARTMENT">
-        <id name="id" type="java.lang.Integer">
-            <column name="ID" />
-            <generator class="assigned" />
+        <id name="did" type="java.lang.Long">
+            <generator class="increment" />
         </id>
-        <property name="departmentName" type="java.lang.String">
-            <column name="DEPARTMENTNAME" />
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
         </property>
+        <set name="users" table="USER" inverse="false" lazy="true">
+            <key>
+                <column name="DID" />
+            </key>
+            <one-to-many class="cn.haha.emp.domain.User" />
+        </set>
     </class>
 </hibernate-mapping>

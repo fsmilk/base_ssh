@@ -1,28 +1,27 @@
 package cn.haha.emp.domain;
 
+import java.util.Set;
+
 public class Department {
-	
-	private Integer id;
-	private String departmentName;
-	
-	public Integer getId() {
-		return id;
+	private Long did;
+	private String name;
+	private Set<User> users;
+	public Long getDid() {
+		return did;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public void setDid(Long did) {
+		this.did = did;
 	}
-
-	public String getDepartmentName() {
-		return departmentName;
+	public String getName() {
+		return name;
 	}
-
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public Department() {
-		// TODO Auto-generated constructor stub
+	public Set<User> getUsers() {
+		return users;
 	}
-
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
 }
