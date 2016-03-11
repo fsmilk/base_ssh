@@ -3,16 +3,20 @@ package cn.haha.emp.domain;
 import java.io.Serializable;
 import java.util.Set;
 
-public class Department implements Serializable{
-	private Long did;
+public class Role implements Serializable{
+	private Long rid;
 	private String name;
 	private String description;
 	private Set<User> users;
-	public Long getDid() {
-		return did;
+	
+	public Role() {
+		super();
 	}
-	public void setDid(Long did) {
-		this.did = did;
+	public Long getRid() {
+		return rid;
+	}
+	public void setRid(Long rid) {
+		this.rid = rid;
 	}
 	public String getName() {
 		return name;
@@ -20,17 +24,16 @@ public class Department implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<User> getUsers() {
-		return users;
-	}
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-	
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Set<User> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 }

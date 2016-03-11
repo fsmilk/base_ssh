@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-11 9:46:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+   <class name="cn.haha.emp.domain.Role">
+   		<id name="rid" length="5">
+   			<generator class="increment"></generator>
+   		</id>
+   		<property name="description" length="100"></property>
+   		<property name="name" length="20"></property>
+   		<set name="users" table="user_role">
+   			<key>
+   				<column name="rid"></column>
+   			</key>
+   			<many-to-many class="cn.haha.emp.domain.User" column="uid"></many-to-many>
+   		</set>
+   </class>
+</hibernate-mapping>

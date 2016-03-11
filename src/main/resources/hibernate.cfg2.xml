@@ -3,14 +3,16 @@
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    		<!-- 
-		一个session-factory代表一个数据库
-	 -->
-<session-factory>
-	<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <session-factory>
+    	<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-       
+        <!-- 
+		加载映射文件
+		-->
+		<mapping resource="cn/haha/emp/domain/Department.hbm.xml" />
+		<mapping resource="cn/haha/emp/domain/Role.hbm.xml" />
+		<mapping resource="cn/haha/emp/domain/User.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

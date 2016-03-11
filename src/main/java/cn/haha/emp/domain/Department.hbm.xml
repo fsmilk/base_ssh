@@ -3,18 +3,17 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016-3-10 16:28:51 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="cn.haha.emp.domain.Department" table="DEPARTMENT">
-        <id name="did" type="java.lang.Long">
-            <generator class="increment" />
-        </id>
-        <property name="name" type="java.lang.String">
-            <column name="NAME" />
-        </property>
-        <set name="users" table="USER" inverse="false" lazy="true">
-            <key>
-                <column name="DID" />
-            </key>
-            <one-to-many class="cn.haha.emp.domain.User" />
-        </set>
-    </class>
+   <class name="cn.haha.emp.domain.Department">
+   		<id name="did" length="5">
+   			<generator class="increment"></generator>
+   		</id>
+   		<property name="name" length="20"></property>
+   		<property name="description" length="50"></property>
+  		<set name="users" inverse="true">
+  			<key>
+  				<column name="did"></column>
+  			</key>
+  			<one-to-many class="cn.haha.emp.domain.User"/>
+  		</set>
+   </class>
 </hibernate-mapping>
