@@ -9,6 +9,7 @@ public interface BaseDao<T> {
 	public void deleteEntry(Serializable id);
 	public void updateEntry(T t);
 	public List<T> queryEntry();
+	public List<T> queryList(String hql);
 	public T getEntryById(Serializable id);
 	//public Set<T> getEntrysByIds(Serializable[] ids);
 }

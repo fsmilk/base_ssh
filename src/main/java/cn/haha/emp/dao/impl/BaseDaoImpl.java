@@ -2,9 +2,7 @@ package cn.haha.emp.dao.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -15,7 +13,7 @@ import cn.haha.emp.dao.BaseDao;
 public class BaseDaoImpl<T> implements BaseDao<T>{
 	
 	@Resource(name="hibernateTemplate")
-	private HibernateTemplate hibernateTemplate;
+	protected HibernateTemplate hibernateTemplate;
 	
 	
 	//实体bean的class形式
@@ -49,6 +47,11 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 	@Override
 	public T getEntryById(Serializable id) {
 		return (T) this.hibernateTemplate.get(this.entityClass, id);
+	}
+
+	@Override
+	public List<T> queryList(String hql) {
+		return (List<T>) this.hibernateTemplate.find(hql);
 	}
 
 
